@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Справочник</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style type="text/css">
+        table{
+    width: 300px; /* Ширина таблицы */
+    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+   }
+   td,tr {
+    padding: 3px; /* Поля вокруг содержимого таблицы */
+    border: 1px solid black; /* Параметры рамки */
+   }
+   tr{
+    background: #b0e0e6; /* Цвет фона */
+   }
+    </style>
+</head>
+<body>
+<h1>
+    {% if phones %}
+        <table>
+    <tr><td>ФИО</td><td>Дата регистрации</td><td>Адрес</td><td>Телефон</td></tr>
+    {% for i in phones %}
+        <tr><td>{{ i.Name }}</td><td>{{i.RegDate }}</td><td>{{i.Adress}}</td><td>{{i.Phone }}</td></tr>
+        {% endfor %}
+        </table>
+    {% endif %}
+</h1>
+</body>
+</html>
